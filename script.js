@@ -1,12 +1,13 @@
 let min = 9,
     sec = 0;
 
-timerStart();
-
 function draw() {
     let display = `${min} : ${sec}`;
     document.getElementById('test').textContent = display;
 }
+
+let btnPlay = document.getElementById('play');
+
 
 function timerStart() {
 	if (sec < 10) {
@@ -16,8 +17,8 @@ function timerStart() {
   	 min = "0" + min;
   }
     draw();
-  
-    setInterval(function() {
+    
+    let play = setInterval(function() {
   	 sec--;
     if (sec < 0) {
     	sec = 59;
@@ -31,6 +32,9 @@ function timerStart() {
         min = min.toString();
         min = min.substring(min.length - 2);
     }
+       
     draw();
     }, 1000);
 }
+
+btnPlay.addEventListener('click', timerStart);
