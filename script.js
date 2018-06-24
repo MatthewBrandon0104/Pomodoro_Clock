@@ -7,34 +7,18 @@ function draw() {
 }
 
 let btnPlay = document.getElementById('play');
+let btnPause = document.getElementById('pause');
 
-
-function timerStart() {
-	if (sec < 10) {
-  	 sec = "0" + sec;
-  }
-    if (min < 10) {
-  	 min = "0" + min;
-  }
-    draw();
-    
-    let play = setInterval(function() {
-  	 sec--;
-    if (sec < 0) {
-    	sec = 59;
-        min--;
-    }
-    if (sec < 10) {
-    	sec = "0" + sec;
-    }
-    if (min < 10) {
-    	min = "0" + min;
-        min = min.toString();
-        min = min.substring(min.length - 2);
-    }
-       
-    draw();
-    }, 1000);
+function countDown() {
+    sec--;
+    draw()
 }
 
-btnPlay.addEventListener('click', timerStart);
+let play;
+btnPlay.addEventListener('click', function() {
+    play = setInterval(countDown, 1000);
+});
+
+btnPause.addEventListener('click', function() {
+    clearInterval(play); 
+});
