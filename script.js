@@ -7,7 +7,7 @@ let workSession = 25,
 
 function draw() {
     let display = `${min} : ${sec}`;
-    document.getElementById('test').textContent = display;
+    document.getElementById('test').textContent = display + " " + workSession;
 }
 
 function countDown() {
@@ -25,8 +25,11 @@ function countDown() {
 let play,
     isPlaying = false;
 
-let btnPlay = document.getElementById('play');
-let btnPause = document.getElementById('pause');
+let btnPlay = document.getElementById('play'),
+    btnPause = document.getElementById('pause'),
+    btnPlus = document.getElementById('plus'),
+    btnMinus = document.getElementById('minus');
+
 
 btnPlay.addEventListener('click', function() {
     if (isPlaying === true) {
@@ -40,3 +43,6 @@ btnPause.addEventListener('click', function() {
     clearInterval(play);
     isPlaying = false;
 });
+
+btnPlus.addEventListener('click', () => {workSession++;});
+btnMinus.addEventListener('click', () => {workSession--;});
