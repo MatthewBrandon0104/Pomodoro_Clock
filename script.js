@@ -28,7 +28,8 @@ let play,
 let btnPlay = document.getElementById('play'),
     btnPause = document.getElementById('pause'),
     btnPlus = document.getElementById('plus'),
-    btnMinus = document.getElementById('minus');
+    btnMinus = document.getElementById('minus'),
+    btnReset = document.getElementById('reset');
 
 
 btnPlay.addEventListener('click', function() {
@@ -46,3 +47,13 @@ btnPause.addEventListener('click', function() {
 
 btnPlus.addEventListener('click', () => {workSession++;});
 btnMinus.addEventListener('click', () => {workSession--;});
+
+btnReset.addEventListener('click', function() {
+    min = workSession;
+    sec = "0" + "0";
+    if(isPlaying === true) {
+        clearInterval(play);
+        isPlaying = false;
+        draw();
+    } else { draw(); }
+})
