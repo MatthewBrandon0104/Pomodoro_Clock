@@ -3,22 +3,23 @@
 <head>
 <title>Pomodoro Clock</title>
 <link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <div id="side-nav" class="side-nav">
     <div class="wrapper">
-        <a href="javascript:void(0)" id="close">X</a>
-        <a href="javascript:void(0)" id="plus">+</a>
-        <a href="javascript:void(0)" id="minus">-</a>
+        <a href="javascript:void(0)" id="close"><i class="material-icons">close</i></a>
+        <a href="javascript:void(0)" id="plus"><i class="material-icons">add</i></a>
+        <a href="javascript:void(0)" id="minus"><i class="material-icons">remove</i></a>
     </div>
 </div>
 
 <div id="main">
-    <button id="open">MENU</button>
+    <a href="javascript:void(0)" id="open"><i class="material-icons">more_horiz</i></a>
     <div id="test"></div>
-    <button id="play">start</button>
-    <button id="pause">stop</button>
-    <button id="reset">@</button>
+    <a href="javascript:void(0)" id="play"><i class="material-icons">play_arrow</i></a>
+    <a href="javascript:void(0)" id="pause"><i class="material-icons">pause</i></a>
+    <a href="javascript:void(0)"><i class="material-icons" id="reset">autorenew</i></a>
 </div>
 <script src="script.js"></script>
 </body>

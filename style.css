@@ -1,5 +1,7 @@
 body {
     background-color: aqua;
+    background-image: url(assetts/Pomo_BG_1.jpg);
+    background-repeat: no-repeat;
 }
 
 .side-nav {
@@ -16,15 +18,36 @@ body {
     text-align: center;
 }
 
-.side-nav a {
-    color: white;
-    font-size: 18px;
-    font-family: Lato;
-    font-weight: 600;
+#main {
+    transition: margin-left 0.5s;
+    padding: 20px;
 }
 
-.side-nav a:hover {
-    color: lightpink;
+#test {
+    font-size: 64px;
+    font-family: Open Sans;
+    color: tomato;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* =======ICON STYLING======== */
+#main>a {
+    color: tomato;
+    transition: 0.2s;
+    font-size: 48px;
+}
+
+#main>a:hover {
+    color: #ef2400;
+}
+
+#main a>i {
+    font-size: 48px;
+}
+
+#side-nav .wrapper a>i {
+    color: red;
 }
 
 .side-nav #close {
@@ -32,7 +55,4 @@ body {
     bottom: 50px;
 }
 
-#main {
-    transition: margin-left 0.5s;
-    padding: 20px;
-}
+/*============================*/
