@@ -7,7 +7,7 @@ let workSession = 25,
 
 function draw() {
     let display = `${min} : ${sec}`;
-    document.getElementById('test').textContent = display + " " + workSession;
+    document.getElementById('test').textContent = display;
 }
 
 function countDown() {
@@ -56,4 +56,20 @@ btnReset.addEventListener('click', function() {
         isPlaying = false;
         draw();
     } else { draw(); }
-})
+});
+
+let sideNav = document.getElementById('side-nav'),
+    main = document.getElementById('main');
+
+function menuOpen() {
+    sideNav.style.width = "250px";
+    main.style.marginLeft = "250px";
+}
+
+function menuClose() {
+    sideNav.style.width = "0";
+    main.style.marginLeft = "0";
+}
+
+document.getElementById('close').addEventListener('click', () => { menuClose(); });
+document.getElementById('open').addEventListener('click', () => { menuOpen(); });
