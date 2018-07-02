@@ -1,9 +1,10 @@
 let workSession = 25,
     shortBreak = 5,
     longBreak = 30,
+    segment = 4,
     
-    min = 9,
-    sec = 5;
+    min = 25,
+    sec = 0;
 
 function draw() {
     let display = `${min} : ${sec}`;
@@ -18,6 +19,18 @@ function countDown() {
     }
     if (sec < 10) {
         sec = "0" + sec;
+    }
+    if (min === 0 && sec === "0" + 0) {
+        if (segment === 1 || segment === 3) {
+            min = shortBreak;
+            segment++;
+        } else if (segment === 0 || segment === 2)  {
+            min = workSession;
+            segment++;
+        } else if (segment === 4) {
+            min = longBreak;
+            segment = 0;
+        }
     }
     draw()
 }
